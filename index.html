@@ -29,8 +29,8 @@ try{var t=localStorage.getItem('theme'); if(t==='light'||t==='dark') document.do
 </script>
 <style>
 :root{
-  --bg:#FBFBFD; --ink:#14213D; --text:#3A4558; --muted:#6B7385;
-  --rule:#DDE1EA; --accent:#2747A8; --accent-soft:#E7ECFA; --todo:#FFF3C4; --todo-ink:#6A5200; --panel:#F1F3F9; --dot:rgba(39,71,168,.16);
+  --bg:#F8FAFC; --ink:#0E2238; --text:#334559; --muted:#647589;
+  --rule:#D8E0EA; --accent:#1B4A7A; --accent-soft:#E3ECF5; --todo:#FFF3C4; --todo-ink:#6A5200; --panel:#EEF3F8; --dot:rgba(27,74,122,.24);
   --serif:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
   --sans:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
   color-scheme: light;
@@ -40,14 +40,14 @@ try{var t=localStorage.getItem('theme'); if(t==='light'||t==='dark') document.do
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#10131A; --ink:#E6E8EE; --text:#C3C8D4; --muted:#8C93A3;
-    --rule:#2A3040; --accent:#8FA8FF; --accent-soft:#1C2440; --todo:#3A3214; --todo-ink:#F2D98A; --panel:#161A24; --dot:rgba(143,168,255,.14);
+    --bg:#0B1520; --ink:#E2EAF3; --text:#B9C6D5; --muted:#8293A7;
+    --rule:#22344A; --accent:#7EA9D8; --accent-soft:#132840; --todo:#3A3214; --todo-ink:#F2D98A; --panel:#10202F; --dot:rgba(126,169,216,.20);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#10131A; --ink:#E6E8EE; --text:#C3C8D4; --muted:#8C93A3;
-  --rule:#2A3040; --accent:#8FA8FF; --accent-soft:#1C2440; --todo:#3A3214; --todo-ink:#F2D98A; --panel:#161A24; --dot:rgba(143,168,255,.14);
+  --bg:#0B1520; --ink:#E2EAF3; --text:#B9C6D5; --muted:#8293A7;
+  --rule:#22344A; --accent:#7EA9D8; --accent-soft:#132840; --todo:#3A3214; --todo-ink:#F2D98A; --panel:#10202F; --dot:rgba(126,169,216,.20);
   color-scheme: dark;
 }
 html[lang="ja"]{--serif:"BIZ UDPGothic","Meiryo","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif; --sans:"BIZ UDPGothic","Meiryo","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
@@ -88,15 +88,15 @@ html:not([lang="en"]) .hero p.lede{line-height:1.75}
 .links a{display:inline-flex; align-items:center; gap:.45em; color:var(--ink); text-decoration:none; background:var(--bg); border:1px solid var(--rule); border-radius:999px; padding:.38rem .9rem .38rem .7rem; line-height:1.2}
 .links a:hover{border-color:var(--c,var(--accent)); background:var(--accent-soft)}
 .links .ic{color:var(--c,var(--accent)); margin:0}
-.brand{width:1.15em; height:1.15em; flex:none; display:block}
-.brand[hidden]{display:none}
-.l-mail{--c:#D9480F} .l-gh{--c:#24292F} .l-li{--c:#0A66C2} .l-orcid{--c:#6E9A1F} .l-paper{--c:#C0392B} .l-slides{--c:#8E44AD} .l-cv{--c:#2747A8}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .l-gh{--c:#E6EDF3} :root:not([data-theme="light"]) .l-li{--c:#4DA3FF} :root:not([data-theme="light"]) .l-orcid{--c:#A6CE39} :root:not([data-theme="light"]) .l-paper{--c:#FF8A7A} :root:not([data-theme="light"]) .l-slides{--c:#C79BEA} :root:not([data-theme="light"]) .l-cv{--c:#8FA8FF} :root:not([data-theme="light"]) .l-mail{--c:#FF9F5A}}
-:root[data-theme="dark"] .l-gh{--c:#E6EDF3} :root[data-theme="dark"] .l-li{--c:#4DA3FF} :root[data-theme="dark"] .l-orcid{--c:#A6CE39} :root[data-theme="dark"] .l-paper{--c:#FF8A7A} :root[data-theme="dark"] .l-slides{--c:#C79BEA} :root[data-theme="dark"] .l-cv{--c:#8FA8FF} :root[data-theme="dark"] .l-mail{--c:#FF9F5A}
+.brand{width:1.15em; height:1.15em; flex:none; display:block; object-fit:contain}
+.brand + .ic{display:none}
+.l-mail{--c:#D9480F} .l-gh{--c:#24292F} .l-li{--c:#0A66C2} .l-orcid{--c:#6E9A1F} .l-paper{--c:#C0392B} .l-slides{--c:#8E44AD} .l-cv{--c:#1B4A7A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .l-gh{--c:#E6EDF3} :root:not([data-theme="light"]) .l-li{--c:#4DA3FF} :root:not([data-theme="light"]) .l-orcid{--c:#A6CE39} :root:not([data-theme="light"]) .l-paper{--c:#FF8A7A} :root:not([data-theme="light"]) .l-slides{--c:#C79BEA} :root:not([data-theme="light"]) .l-cv{--c:#7EA9D8} :root:not([data-theme="light"]) .l-mail{--c:#FF9F5A}}
+:root[data-theme="dark"] .l-gh{--c:#E6EDF3} :root[data-theme="dark"] .l-li{--c:#4DA3FF} :root[data-theme="dark"] .l-orcid{--c:#A6CE39} :root[data-theme="dark"] .l-paper{--c:#FF8A7A} :root[data-theme="dark"] .l-slides{--c:#C79BEA} :root[data-theme="dark"] .l-cv{--c:#7EA9D8} :root[data-theme="dark"] .l-mail{--c:#FF9F5A}
 .ic{width:1.15em; height:1.15em; flex:none; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; margin-right:.4em}
 .photo{width:6.5rem; height:6.5rem; border-radius:50%; overflow:hidden; background:var(--accent-soft); color:var(--accent); display:grid; place-items:center; font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Microsoft YaHei UI","Microsoft JhengHei UI",sans-serif; font-weight:600; font-size:1.6rem; line-height:1; margin:0 0 1.25rem; flex:none}
 .photo img{width:100%; height:100%; object-fit:cover; display:block}
-.photo img[hidden]{display:none}
+.photo img + span{display:none}
 .diagram{width:100%; max-width:100%; height:auto; display:block}
 .diagram text{font-family:var(--sans)}
 
@@ -107,9 +107,10 @@ section h2::before{content:""; display:block; width:1.5rem; height:3px; border-r
 
 /* Faint graph-paper dots behind the hero, fading out downward */
 .hero{position:relative}
-.hero::before{content:""; position:absolute; top:-5rem; bottom:0; left:50%; width:100vw; transform:translateX(-50%); z-index:-1; pointer-events:none;
-  background-image:radial-gradient(var(--dot) 1.1px, transparent 1.4px); background-size:22px 22px;
-  -webkit-mask-image:linear-gradient(to bottom,#000 10%,transparent 90%); mask-image:linear-gradient(to bottom,#000 10%,transparent 90%)}
+.grid-bg{position:absolute; top:0; left:0; right:0; height:46rem; z-index:0; pointer-events:none;
+  background-image:radial-gradient(var(--dot) 1.1px, transparent 1.5px); background-size:22px 22px; background-position:center top;
+  -webkit-mask-image:linear-gradient(to bottom,#000 15%,transparent 95%); mask-image:linear-gradient(to bottom,#000 15%,transparent 95%)}
+.wrap{position:relative; z-index:1}
 
 /* Featured paper */
 #research .item:first-child{background:var(--panel); border-radius:14px; padding:1.5rem 1.6rem; margin-left:-1.6rem; margin-right:-1.6rem}
@@ -117,7 +118,7 @@ section h2::before{content:""; display:block; width:1.5rem; height:3px; border-r
 /* Timelines for dated entries */
 #education .body,#experience .body,#recognition .body{border-left:2px solid var(--rule); padding-left:1.5rem; margin-left:.3rem}
 #education .item,#experience .item,#recognition .item{position:relative}
-#education .item::before,#experience .item::before,#recognition .item::before{content:""; position:absolute; left:calc(-1.5rem - 6px); top:.5rem; width:8px; height:8px; border-radius:50%; background:var(--bg); border:2px solid var(--accent)}
+#education .item::before,#experience .item::before,#recognition .item::before{content:""; position:absolute; left:calc(-1.5rem - 1px); top:.55rem; width:10px; height:10px; transform:translateX(-50%); border-radius:50%; background:var(--bg); border:2px solid var(--accent); box-sizing:border-box}
 
 /* Hero figure */
 .hero-fig{margin:0; align-self:center}
@@ -152,6 +153,7 @@ footer{padding:2.5rem 0 3rem; font-family:var(--sans); font-size:.9rem; color:va
 </style>
 </head>
 <body>
+<div class="grid-bg" aria-hidden="true"></div>
 <div class="wrap">
 
 <div class="bar">
@@ -164,16 +166,16 @@ footer{padding:2.5rem 0 3rem; font-family:var(--sans); font-size:.9rem; color:va
 
 <header class="hero">
   <div>
-    <div class="photo"><img src="assets/photo.jpg" alt="Kota Urushigaki" width="208" height="208" hidden onload="this.hidden=false;this.nextElementSibling.remove()"><span aria-hidden="true">KU</span></div>
+    <div class="photo"><img src="assets/photo.jpg" alt="Kota Urushigaki" width="208" height="208" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace(/\.jpg$/,'.png')}else{this.remove()}"><span aria-hidden="true">KU</span></div>
     <h1>Kota Urushigaki</h1>
     <p class="affil">Security researcher · Isobe Laboratory, The University of Osaka</p>
     <p class="lede">I study the security of cryptographic protocols that people rely on every day, especially secure messengers. I analyze the code these apps actually ship, turn design flaws into practical attacks, and disclose them to the developers. I start my master’s at the University of Osaka in April 2027.</p>
     <p class="seeking">Looking for summer 2027 research internships in applied cryptography and protocol security.</p>
     <div class="links">
       <a class="l-mail" href="mailto:k.urushigaki@ist.osaka-u.ac.jp"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Email</span></a>
-      <a class="l-gh" href="https://github.com/kota5140"><img class="brand" src="assets/icons/github.svg" alt="" width="18" height="18" hidden onload="this.hidden=false;this.nextElementSibling.remove()"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg>GitHub</a>
-      <a class="l-li" href="https://www.linkedin.com/in/kotaursgk/"><img class="brand" src="assets/icons/linkedin.svg" alt="" width="18" height="18" hidden onload="this.hidden=false;this.nextElementSibling.remove()"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.6 1.7-2.3 3-2.3s2.4.7 3 2.3M14 10h4M14 13h4"/></svg>LinkedIn</a>
-      <a class="l-orcid" href="https://orcid.org/0009-0002-5184-3131"><img class="brand" src="assets/icons/orcid.svg" alt="" width="18" height="18" hidden onload="this.hidden=false;this.nextElementSibling.remove()"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>ORCID</a>
+      <a class="l-gh" href="https://github.com/kota5140"><img class="brand" src="assets/icons/github.svg" alt="" width="18" height="18" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace(/\.svg$/,'.png')}else{this.remove()}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg>GitHub</a>
+      <a class="l-li" href="https://www.linkedin.com/in/kotaursgk/"><img class="brand" src="assets/icons/linkedin.svg" alt="" width="18" height="18" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace(/\.svg$/,'.png')}else{this.remove()}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.6 1.7-2.3 3-2.3s2.4.7 3 2.3M14 10h4M14 13h4"/></svg>LinkedIn</a>
+      <a class="l-orcid" href="https://orcid.org/0009-0002-5184-3131"><img class="brand" src="assets/icons/orcid.svg" alt="" width="18" height="18" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace(/\.svg$/,'.png')}else{this.remove()}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>ORCID</a>
       <a class="l-paper" href="https://www.usenix.org/conference/woot26/presentation/urushigaki"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg><span>WOOT ’26 paper</span></a>
       <a class="l-cv" href="cv.pdf"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>CV (PDF)</span></a>
     </div>
@@ -230,7 +232,7 @@ footer{padding:2.5rem 0 3rem; font-family:var(--sans); font-size:.9rem; color:va
       <p class="links">
         <a class="l-paper" href="https://www.usenix.org/system/files/woot26-urushigaki.pdf"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg><span>Paper (PDF)</span></a>
         <a class="l-slides" href="https://www.usenix.org/system/files/woot26-slides-urushigaki.pdf"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8 20h8"/></svg><span>Slides</span></a>
-        <a class="l-gh" href="https://github.com/kota5140/session-woot"><img class="brand" src="assets/icons/github.svg" alt="" width="18" height="18" hidden onload="this.hidden=false;this.nextElementSibling.remove()"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg><span>Artifact</span></a>
+        <a class="l-gh" href="https://github.com/kota5140/session-woot"><img class="brand" src="assets/icons/github.svg" alt="" width="18" height="18" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace(/\.svg$/,'.png')}else{this.remove()}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg><span>Artifact</span></a>
       </p>
       <p class="meta">Presented at USENIX WOOT ’26, Baltimore, August 2026</p>
       <p class="meta">The impersonation attack was first presented in Japanese at SCIS 2026, the Symposium on Cryptography and Information Security, in January 2026.</p>
