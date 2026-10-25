@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>漆垣皓大 — 安全通訊協定與攻擊性安全研究</title>
-<meta name="description" content="漆垣皓大（大阪大學 磯部研究室）的個人網站。USENIX WOOT ’26 論文第一作者，提出針對安全通訊應用程式 Session 的實用攻擊。">
+<meta name="description" content="漆垣皓大（大阪大學 五十部研究室）的個人網站。USENIX WOOT ’26 論文第一作者，提出針對安全通訊應用程式 Session 的實用攻擊。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="漆垣皓大 — 安全通訊協定與攻擊性安全研究">
-<meta property="og:description" content="漆垣皓大（大阪大學 磯部研究室）的個人網站。USENIX WOOT ’26 論文第一作者，提出針對安全通訊應用程式 Session 的實用攻擊。">
+<meta property="og:description" content="漆垣皓大（大阪大學 五十部研究室）的個人網站。USENIX WOOT ’26 論文第一作者，提出針對安全通訊應用程式 Session 的實用攻擊。">
 <meta property="og:url" content="https://kota5140.github.io/zh-hant/">
 <meta property="og:locale" content="zh_TW">
 <meta name="twitter:card" content="summary">
@@ -62,19 +62,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-of
 .sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
 
 /* Toolbar */
-.bar{display:flex; justify-content:flex-end; align-items:center; gap:.75rem; padding:1rem 0 0; font-family:var(--sans); font-size:.9rem}
+/* Toolbar: same system font, size and box on every language page, so nothing moves when switching */
+.bar{display:flex; justify-content:flex-end; align-items:center; gap:.75rem; height:3.25rem; margin-top:1rem; font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Microsoft YaHei UI","Microsoft JhengHei UI",sans-serif; font-size:.875rem; line-height:1.25rem}
 .bar button{font:inherit; color:var(--ink); background:var(--bg); border:1px solid var(--rule); border-radius:6px; height:2.25rem; cursor:pointer}
 .bar button{width:2.25rem; display:grid; place-items:center; padding:0}
 .bar button svg{width:1.1rem; height:1.1rem; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
 .bar button:hover{border-color:var(--accent)}
-.langs{display:flex; flex-wrap:wrap; gap:.15rem .9rem; margin-right:auto}
-.langs a{color:var(--muted); text-decoration:none; padding:.2rem 0}
+.langs{display:flex; flex-wrap:nowrap; gap:.25rem; margin-right:auto}
+.langs a{flex:0 0 4.25rem; text-align:center; white-space:nowrap; color:var(--muted); text-decoration:none; padding:.4rem 0; border-bottom:2px solid transparent}
 .langs a:hover{color:var(--accent)}
-.langs a[aria-current="page"]{color:var(--ink); font-weight:600; border-bottom:2px solid var(--accent)}
+.langs a[aria-current="page"]{color:var(--ink); font-weight:600; border-bottom-color:var(--accent)}
 .i-sun{display:none} .is-dark .i-sun{display:block} .is-dark .i-moon{display:none}
 
 /* Hero */
-.hero{display:grid; grid-template-columns:1.1fr 1fr; gap:3rem; align-items:center; padding:2.5rem 0 4rem; border-bottom:1px solid var(--rule)}
+.hero{display:grid; grid-template-columns:1.1fr 1fr; gap:3rem; align-items:start; padding:2.5rem 0 4rem; border-bottom:1px solid var(--rule)}
 .hero h1{font-size:clamp(2.2rem,5vw,3.4rem); line-height:1.1; color:var(--ink); margin:0 0 .5rem; font-weight:700; letter-spacing:-.01em}
 .romaji{display:block; font-family:var(--sans); font-size:.38em; font-weight:400; color:var(--muted); letter-spacing:0; margin-top:.6rem}
 .affil{font-family:var(--sans); color:var(--muted); margin:0 0 1.25rem; font-size:.98rem}
@@ -91,10 +92,10 @@ html:not([lang="en"]) .hero p.lede{line-height:1.75}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .l-gh{--c:#E6EDF3} :root:not([data-theme="light"]) .l-li{--c:#4DA3FF} :root:not([data-theme="light"]) .l-orcid{--c:#A6CE39} :root:not([data-theme="light"]) .l-paper{--c:#FF8A7A} :root:not([data-theme="light"]) .l-slides{--c:#C79BEA} :root:not([data-theme="light"]) .l-cv{--c:#8FA8FF} :root:not([data-theme="light"]) .l-mail{--c:#FF9F5A}}
 :root[data-theme="dark"] .l-gh{--c:#E6EDF3} :root[data-theme="dark"] .l-li{--c:#4DA3FF} :root[data-theme="dark"] .l-orcid{--c:#A6CE39} :root[data-theme="dark"] .l-paper{--c:#FF8A7A} :root[data-theme="dark"] .l-slides{--c:#C79BEA} :root[data-theme="dark"] .l-cv{--c:#8FA8FF} :root[data-theme="dark"] .l-mail{--c:#FF9F5A}
 .ic{width:1.15em; height:1.15em; flex:none; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; margin-right:.4em}
-.photo{width:6.5rem; height:6.5rem; border-radius:50%; overflow:hidden; background:var(--accent-soft); color:var(--accent); display:grid; place-items:center; font-family:var(--sans); font-weight:600; font-size:1.6rem; margin:0 0 1.25rem}
+.photo{width:6.5rem; height:6.5rem; border-radius:50%; overflow:hidden; background:var(--accent-soft); color:var(--accent); display:grid; place-items:center; font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Microsoft YaHei UI","Microsoft JhengHei UI",sans-serif; font-weight:600; font-size:1.6rem; line-height:1; margin:0 0 1.25rem; flex:none}
 .photo img{width:100%; height:100%; object-fit:cover; display:block}
 .photo img[hidden]{display:none}
-.diagram{width:100%; max-width:100%; height:auto}
+.diagram{width:100%; max-width:100%; height:auto; align-self:center}
 .diagram text{font-family:var(--sans)}
 
 /* Sections */
@@ -142,7 +143,7 @@ footer{padding:2.5rem 0 3rem; font-family:var(--sans); font-size:.9rem; color:va
   <div>
     <div class="photo"><img src="../assets/photo.jpg" alt="Kota Urushigaki" width="208" height="208" hidden onload="this.hidden=false;this.nextElementSibling.remove()"><span aria-hidden="true">KU</span></div>
     <h1>漆垣皓大<span class="romaji">Kota Urushigaki</span></h1>
-    <p class="affil">資安研究員 · 大阪大學 磯部研究室</p>
+    <p class="affil">資安研究員 · 大阪大學 五十部研究室</p>
     <p class="lede">我研究人們日常使用的密碼協定的安全性，尤其是安全通訊應用程式。我分析這些應用程式實際發布的程式碼，將設計缺陷轉化為實用攻擊，並負責任地向開發者揭露。2027年4月起，我將於大阪大學攻讀碩士學位。</p>
     <p class="seeking">正在尋找2027年夏季應用密碼學與協定安全方向的研究實習機會。</p>
     <div class="links">
@@ -247,7 +248,7 @@ footer{padding:2.5rem 0 3rem; font-family:var(--sans); font-size:.9rem; color:va
     </div>
     <div class="item">
       <h3>大阪大學 基礎工學部 資訊科學 學士</h3>
-      <p class="meta">2022年4月 – 2026年3月 · 磯部研究室</p>
+      <p class="meta">2022年4月 – 2026年3月 · 五十部研究室</p>
     </div>
     <div class="item">
       <h3>慕尼黑工業大學 交換留學</h3>
@@ -260,7 +261,7 @@ footer{padding:2.5rem 0 3rem; font-family:var(--sans); font-size:.9rem; color:va
   <h2>經歷</h2>
   <div class="body">
     <div class="item">
-      <h3>大阪大學 磯部研究室 特任研究員</h3>
+      <h3>大阪大學 五十部研究室 特任研究員</h3>
       <p class="meta">2026年4月 – 至今</p>
       <p>延續大學時期的研究，結合形式化建模與針對真實實作的黑箱、白箱分析，挖掘實際部署之密碼協定中的設計缺陷。</p>
     </div>
