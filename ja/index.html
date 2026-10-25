@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>漆垣 皓大 — セキュアメッセージングとオフェンシブセキュリティ</title>
+<meta name="description" content="漆垣 皓大（大阪大学 磯部研究室）のポートフォリオ。セキュアメッセンジャーSessionへの実用的な攻撃を示したUSENIX WOOT ’26論文の筆頭著者。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="漆垣 皓大 — セキュアメッセージングとオフェンシブセキュリティ">
+<meta property="og:description" content="漆垣 皓大（大阪大学 磯部研究室）のポートフォリオ。セキュアメッセンジャーSessionへの実用的な攻撃を示したUSENIX WOOT ’26論文の筆頭著者。">
+<meta property="og:url" content="https://kota5140.github.io/ja/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%94%90%3C/text%3E%3C/svg%3E">
 <link rel="alternate" hreflang="en" href="https://kota5140.github.io/">
 <link rel="alternate" hreflang="ja" href="https://kota5140.github.io/ja/">
 <link rel="alternate" hreflang="zh-Hans" href="https://kota5140.github.io/zh-hans/">
@@ -12,7 +20,7 @@
 <link rel="canonical" href="https://kota5140.github.io/ja/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Public+Sans:wght@400;600&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
 <script>
 /* Apply saved theme before paint to avoid a flash */
 try{var t=localStorage.getItem('theme'); if(t==='light'||t==='dark') document.documentElement.setAttribute('data-theme',t);}catch(e){}
@@ -21,8 +29,8 @@ try{var t=localStorage.getItem('theme'); if(t==='light'||t==='dark') document.do
 :root{
   --bg:#FBFBFD; --ink:#14213D; --text:#3A4558; --muted:#6B7385;
   --rule:#DDE1EA; --accent:#2747A8; --accent-soft:#E7ECFA; --todo:#FFF3C4; --todo-ink:#6A5200;
-  --serif:"Literata",Georgia,"Times New Roman",serif;
-  --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+  --sans:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
   color-scheme: light;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -40,9 +48,9 @@ try{var t=localStorage.getItem('theme'); if(t==='light'||t==='dark') document.do
   --rule:#2A3040; --accent:#8FA8FF; --accent-soft:#1C2440; --todo:#3A3214; --todo-ink:#F2D98A;
   color-scheme: dark;
 }
-html[lang="ja"]{--serif:"Literata","Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif; --sans:"Public Sans","Hiragino Sans","Yu Gothic",system-ui,sans-serif}
-html[lang="zh-Hans"]{--serif:"Literata","Noto Serif SC","Songti SC","SimSun",serif; --sans:"Public Sans","PingFang SC","Microsoft YaHei",system-ui,sans-serif}
-html[lang="zh-Hant"]{--serif:"Literata","Noto Serif TC","Songti TC","PMingLiU",serif; --sans:"Public Sans","PingFang TC","Microsoft JhengHei",system-ui,sans-serif}
+html[lang="ja"]{--serif:"BIZ UDPGothic","Meiryo","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif; --sans:"BIZ UDPGothic","Meiryo","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
+html[lang="zh-Hans"]{--serif:"Source Sans 3","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif; --sans:"Source Sans 3","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif}
+html[lang="zh-Hant"]{--serif:"Source Sans 3","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif; --sans:"Source Sans 3","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
 html:not([lang="en"]) body{line-height:1.85}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
@@ -70,17 +78,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-of
 .hero h1{font-size:clamp(2.2rem,5vw,3.4rem); line-height:1.1; color:var(--ink); margin:0 0 .5rem; font-weight:700; letter-spacing:-.01em}
 .romaji{display:block; font-family:var(--sans); font-size:.38em; font-weight:400; color:var(--muted); letter-spacing:0; margin-top:.6rem}
 .affil{font-family:var(--sans); color:var(--muted); margin:0 0 1.25rem; font-size:.98rem}
-.hero p.lede{font-size:1.25rem; line-height:1.55; margin:0 0 1.5rem; max-width:34rem}
+.hero p.lede{font-size:1.15rem; line-height:1.6; margin:0 0 1.5rem; max-width:34rem}
 html:not([lang="en"]) .hero p.lede{line-height:1.75}
 .seeking{font-family:var(--sans); font-size:.95rem; color:var(--ink); border-left:3px solid var(--accent); padding:.1rem 0 .1rem .75rem; margin:0 0 1.5rem; max-width:34rem}
-.links{display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; font-family:var(--sans); font-size:.95rem}
-.links a{display:inline-flex; align-items:center; text-decoration:none}
-.links a:hover{text-decoration:underline}
+.links{display:flex; flex-wrap:wrap; gap:.5rem; font-family:var(--sans); font-size:.92rem}
+.links a{display:inline-flex; align-items:center; gap:.45em; color:var(--ink); text-decoration:none; background:var(--bg); border:1px solid var(--rule); border-radius:999px; padding:.38rem .9rem .38rem .7rem; line-height:1.2}
+.links a:hover{border-color:var(--c,var(--accent)); background:var(--accent-soft)}
+.links .ic{color:var(--c,var(--accent)); margin:0}
+.brand{width:1.15em; height:1.15em; flex:none; display:block}
+.brand[hidden]{display:none}
+.l-mail{--c:#D9480F} .l-gh{--c:#24292F} .l-li{--c:#0A66C2} .l-orcid{--c:#6E9A1F} .l-paper{--c:#C0392B} .l-slides{--c:#8E44AD} .l-cv{--c:#2747A8}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .l-gh{--c:#E6EDF3} :root:not([data-theme="light"]) .l-li{--c:#4DA3FF} :root:not([data-theme="light"]) .l-orcid{--c:#A6CE39} :root:not([data-theme="light"]) .l-paper{--c:#FF8A7A} :root:not([data-theme="light"]) .l-slides{--c:#C79BEA} :root:not([data-theme="light"]) .l-cv{--c:#8FA8FF} :root:not([data-theme="light"]) .l-mail{--c:#FF9F5A}}
+:root[data-theme="dark"] .l-gh{--c:#E6EDF3} :root[data-theme="dark"] .l-li{--c:#4DA3FF} :root[data-theme="dark"] .l-orcid{--c:#A6CE39} :root[data-theme="dark"] .l-paper{--c:#FF8A7A} :root[data-theme="dark"] .l-slides{--c:#C79BEA} :root[data-theme="dark"] .l-cv{--c:#8FA8FF} :root[data-theme="dark"] .l-mail{--c:#FF9F5A}
 .ic{width:1.15em; height:1.15em; flex:none; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; margin-right:.4em}
 .photo{width:6.5rem; height:6.5rem; border-radius:50%; overflow:hidden; background:var(--accent-soft); color:var(--accent); display:grid; place-items:center; font-family:var(--sans); font-weight:600; font-size:1.6rem; margin:0 0 1.25rem}
 .photo img{width:100%; height:100%; object-fit:cover; display:block}
+.photo img[hidden]{display:none}
 .diagram{width:100%; max-width:100%; height:auto}
-.diagram text{font-family:"Public Sans",system-ui,sans-serif}
+.diagram text{font-family:var(--sans)}
 
 /* Sections */
 section{display:grid; grid-template-columns:12rem 1fr; gap:2rem; padding:3rem 0; border-bottom:1px solid var(--rule)}
@@ -98,7 +113,7 @@ section h2{font-size:1.15rem; color:var(--ink); margin:.2rem 0 0; font-weight:60
 .skills{display:grid; grid-template-columns:repeat(auto-fit,minmax(13rem,1fr)); gap:1rem 2rem}
 .skills h3{font-size:1rem; margin:0 0 .25rem; color:var(--ink)}
 .skills p{margin:0; font-size:.98rem}
-footer{padding:2.5rem 0 3rem; font-family:var(--sans); font-size:.9rem; color:var(--muted)}
+footer{padding:2.5rem 0 3rem; font-family:var(--sans); font-size:.9rem; color:var(--muted); text-align:center}
 @media (max-width:760px){
   .hero{grid-template-columns:1fr; padding:2rem 0 2.5rem; gap:2rem}
   section{grid-template-columns:1fr; gap:.75rem; padding:2.25rem 0}
@@ -125,18 +140,18 @@ footer{padding:2.5rem 0 3rem; font-family:var(--sans); font-size:.9rem; color:va
 
 <header class="hero">
   <div>
-    <div class="photo" role="img" aria-label="Kota Urushigaki">KU</div>
+    <div class="photo"><img src="../assets/photo.jpg" alt="Kota Urushigaki" width="208" height="208" hidden onload="this.hidden=false;this.nextElementSibling.remove()"><span aria-hidden="true">KU</span></div>
     <h1>漆垣 皓大<span class="romaji">Kota Urushigaki</span></h1>
-    <p class="affil">大阪大学</p>
-    <p class="lede">仕様書だけでなく、実際に配布されているコードを読み解き、セキュアメッセージングプロトコルへの実用的な攻撃を見つけています。</p>
+    <p class="affil">セキュリティ研究者 · 大阪大学 磯部研究室</p>
+    <p class="lede">セキュアメッセンジャーをはじめ、日常的に使われている暗号プロトコルの安全性を研究しています。実際に配布されているアプリの実装を解析し、設計上の欠陥を実用的な攻撃として示したうえで、開発元に報告しています。2027年4月から大阪大学大学院の修士課程に進学します。</p>
     <p class="seeking">2027年夏の、応用暗号・プロトコルセキュリティ分野の研究インターンを探しています。</p>
     <div class="links">
-      <a href="mailto:k.urushigaki@ist.osaka-u.ac.jp"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>メール</span></a>
-      <a href="https://github.com/kota5140"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg>GitHub</a>
-      <a href="https://www.linkedin.com/in/kotaursgk/"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.6 1.7-2.3 3-2.3s2.4.7 3 2.3M14 10h4M14 13h4"/></svg>LinkedIn</a>
-      <a href="https://orcid.org/0009-0002-5184-3131"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>ORCID</a>
-      <a href="https://www.usenix.org/conference/woot26/presentation/urushigaki"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg><span>WOOT ’26 論文</span></a>
-      <a href="../cv.pdf"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>CV（PDF）</span></a>
+      <a class="l-mail" href="mailto:k.urushigaki@ist.osaka-u.ac.jp"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>メール</span></a>
+      <a class="l-gh" href="https://github.com/kota5140"><img class="brand" src="../assets/icons/github.svg" alt="" width="18" height="18" hidden onload="this.hidden=false;this.nextElementSibling.remove()"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg>GitHub</a>
+      <a class="l-li" href="https://www.linkedin.com/in/kotaursgk/"><img class="brand" src="../assets/icons/linkedin.svg" alt="" width="18" height="18" hidden onload="this.hidden=false;this.nextElementSibling.remove()"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.6 1.7-2.3 3-2.3s2.4.7 3 2.3M14 10h4M14 13h4"/></svg>LinkedIn</a>
+      <a class="l-orcid" href="https://orcid.org/0009-0002-5184-3131"><img class="brand" src="../assets/icons/orcid.svg" alt="" width="18" height="18" hidden onload="this.hidden=false;this.nextElementSibling.remove()"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>ORCID</a>
+      <a class="l-paper" href="https://www.usenix.org/conference/woot26/presentation/urushigaki"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg><span>WOOT ’26 論文</span></a>
+      <a class="l-cv" href="../cv.pdf"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>CV（PDF）</span></a>
     </div>
   </div>
   <svg class="diagram" viewBox="0 0 420 300" role="img" aria-label="Sequence chart: a sender stores message 41 on a storage node, the receiver gets it, then a malicious node delivers message 41 again, bypassing the intended duplicate check.">
@@ -186,9 +201,9 @@ footer{padding:2.5rem 0 3rem; font-family:var(--sans); font-size:.9rem; color:va
       <p>論文では具体的な対策も提案しています。アーティファクトはUSENIXのArtifact Availableバッジを取得しました。</p>
       <p>3つの攻撃はすべてSessionの開発チームに報告しました。2026年4月下旬に技術的な評価が届き、指摘の大半が認められました。リプレイ攻撃は、設計上のセキュリティ境界ではなく偶発的なデータベース設定によって防がれているため、現状では悪用不可能と分類されています。2026年7月時点で修正は進行中でした。</p>
       <p class="links">
-        <a href="https://www.usenix.org/system/files/woot26-urushigaki.pdf"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg><span>論文（PDF）</span></a>
-        <a href="https://www.usenix.org/system/files/woot26-slides-urushigaki.pdf"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8 20h8"/></svg><span>スライド</span></a>
-        <a href="https://github.com/kota5140/session-woot"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg><span>アーティファクト</span></a>
+        <a class="l-paper" href="https://www.usenix.org/system/files/woot26-urushigaki.pdf"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg><span>論文（PDF）</span></a>
+        <a class="l-slides" href="https://www.usenix.org/system/files/woot26-slides-urushigaki.pdf"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8 20h8"/></svg><span>スライド</span></a>
+        <a class="l-gh" href="https://github.com/kota5140/session-woot"><img class="brand" src="../assets/icons/github.svg" alt="" width="18" height="18" hidden onload="this.hidden=false;this.nextElementSibling.remove()"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg><span>アーティファクト</span></a>
       </p>
       <p class="meta">2026年8月、米国ボルチモアで開催されたUSENIX WOOT ’26で発表</p>
       <p class="meta">なりすまし攻撃は、2026年1月の暗号と情報セキュリティシンポジウム（SCIS 2026）で先行して発表しました。</p>
