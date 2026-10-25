@@ -3,15 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>漆垣皓大 — 安全通讯协议与攻击性安全研究</title>
+<title>Kota Urushigaki（漆垣 皓大）</title>
 <meta name="description" content="漆垣皓大（大阪大学 五十部研究室）的个人主页。USENIX WOOT ’26 论文第一作者，提出了针对安全通讯应用 Session 的实用攻击。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="漆垣皓大 — 安全通讯协议与攻击性安全研究">
+<meta property="og:title" content="Kota Urushigaki（漆垣 皓大）">
 <meta property="og:description" content="漆垣皓大（大阪大学 五十部研究室）的个人主页。USENIX WOOT ’26 论文第一作者，提出了针对安全通讯应用 Session 的实用攻击。">
 <meta property="og:url" content="https://kota5140.github.io/zh-hans/">
 <meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%94%90%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="alternate" hreflang="en" href="https://kota5140.github.io/">
 <link rel="alternate" hreflang="ja" href="https://kota5140.github.io/ja/">
 <link rel="alternate" hreflang="zh-Hans" href="https://kota5140.github.io/zh-hans/">
@@ -28,7 +30,7 @@ try{var t=localStorage.getItem('theme'); if(t==='light'||t==='dark') document.do
 <style>
 :root{
   --bg:#FBFBFD; --ink:#14213D; --text:#3A4558; --muted:#6B7385;
-  --rule:#DDE1EA; --accent:#2747A8; --accent-soft:#E7ECFA; --todo:#FFF3C4; --todo-ink:#6A5200;
+  --rule:#DDE1EA; --accent:#2747A8; --accent-soft:#E7ECFA; --todo:#FFF3C4; --todo-ink:#6A5200; --panel:#F1F3F9; --dot:rgba(39,71,168,.16);
   --serif:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
   --sans:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
   color-scheme: light;
@@ -39,13 +41,13 @@ try{var t=localStorage.getItem('theme'); if(t==='light'||t==='dark') document.do
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#10131A; --ink:#E6E8EE; --text:#C3C8D4; --muted:#8C93A3;
-    --rule:#2A3040; --accent:#8FA8FF; --accent-soft:#1C2440; --todo:#3A3214; --todo-ink:#F2D98A;
+    --rule:#2A3040; --accent:#8FA8FF; --accent-soft:#1C2440; --todo:#3A3214; --todo-ink:#F2D98A; --panel:#161A24; --dot:rgba(143,168,255,.14);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"]{
   --bg:#10131A; --ink:#E6E8EE; --text:#C3C8D4; --muted:#8C93A3;
-  --rule:#2A3040; --accent:#8FA8FF; --accent-soft:#1C2440; --todo:#3A3214; --todo-ink:#F2D98A;
+  --rule:#2A3040; --accent:#8FA8FF; --accent-soft:#1C2440; --todo:#3A3214; --todo-ink:#F2D98A; --panel:#161A24; --dot:rgba(143,168,255,.14);
   color-scheme: dark;
 }
 html[lang="ja"]{--serif:"BIZ UDPGothic","Meiryo","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif; --sans:"BIZ UDPGothic","Meiryo","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
@@ -54,7 +56,7 @@ html[lang="zh-Hant"]{--serif:"Source Sans 3","Noto Sans TC","PingFang TC","Micro
 html:not([lang="en"]) body{line-height:1.85}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0; background:var(--bg); color:var(--text); font-family:var(--serif); font-size:1.0625rem; line-height:1.7}
+body{margin:0; overflow-x:clip; background:var(--bg); color:var(--text); font-family:var(--serif); font-size:1.0625rem; line-height:1.7}
 .wrap{max-width:68rem; margin:0 auto; padding:0 1.5rem}
 a{color:var(--accent); text-underline-offset:.2em}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
@@ -95,12 +97,31 @@ html:not([lang="en"]) .hero p.lede{line-height:1.75}
 .photo{width:6.5rem; height:6.5rem; border-radius:50%; overflow:hidden; background:var(--accent-soft); color:var(--accent); display:grid; place-items:center; font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Microsoft YaHei UI","Microsoft JhengHei UI",sans-serif; font-weight:600; font-size:1.6rem; line-height:1; margin:0 0 1.25rem; flex:none}
 .photo img{width:100%; height:100%; object-fit:cover; display:block}
 .photo img[hidden]{display:none}
-.diagram{width:100%; max-width:100%; height:auto; align-self:center}
+.diagram{width:100%; max-width:100%; height:auto; display:block}
 .diagram text{font-family:var(--sans)}
 
 /* Sections */
 section{display:grid; grid-template-columns:12rem 1fr; gap:2rem; padding:3rem 0; border-bottom:1px solid var(--rule)}
-section h2{font-size:1.15rem; color:var(--ink); margin:.2rem 0 0; font-weight:600}
+section h2{font-size:1.15rem; color:var(--ink); margin:.2rem 0 0; font-weight:600; position:sticky; top:1.5rem; align-self:start}
+section h2::before{content:""; display:block; width:1.5rem; height:3px; border-radius:2px; background:var(--accent); margin-bottom:.65rem}
+
+/* Faint graph-paper dots behind the hero, fading out downward */
+.hero{position:relative}
+.hero::before{content:""; position:absolute; top:-5rem; bottom:0; left:50%; width:100vw; transform:translateX(-50%); z-index:-1; pointer-events:none;
+  background-image:radial-gradient(var(--dot) 1.1px, transparent 1.4px); background-size:22px 22px;
+  -webkit-mask-image:linear-gradient(to bottom,#000 10%,transparent 90%); mask-image:linear-gradient(to bottom,#000 10%,transparent 90%)}
+
+/* Featured paper */
+#research .item:first-child{background:var(--panel); border-radius:14px; padding:1.5rem 1.6rem; margin-left:-1.6rem; margin-right:-1.6rem}
+
+/* Timelines for dated entries */
+#education .body,#experience .body,#recognition .body{border-left:2px solid var(--rule); padding-left:1.5rem; margin-left:.3rem}
+#education .item,#experience .item,#recognition .item{position:relative}
+#education .item::before,#experience .item::before,#recognition .item::before{content:""; position:absolute; left:calc(-1.5rem - 6px); top:.5rem; width:8px; height:8px; border-radius:50%; background:var(--bg); border:2px solid var(--accent)}
+
+/* Hero figure */
+.hero-fig{margin:0; align-self:center}
+.hero-fig figcaption{font-family:var(--sans); font-size:.82rem; color:var(--muted); text-align:center; margin-top:.5rem; line-height:1.5}
 .body{max-width:42rem}
 .item{margin:0 0 2.25rem}
 .item:last-child{margin-bottom:0}
@@ -118,6 +139,8 @@ footer{padding:2.5rem 0 3rem; font-family:var(--sans); font-size:.9rem; color:va
 @media (max-width:760px){
   .hero{grid-template-columns:1fr; padding:2rem 0 2.5rem; gap:2rem}
   section{grid-template-columns:1fr; gap:.75rem; padding:2.25rem 0}
+  section h2{position:static}
+  #research .item:first-child{margin-left:-.9rem; margin-right:-.9rem; padding:1.2rem .9rem}
 }
 @media (prefers-reduced-motion:no-preference){
   .msg{stroke-dasharray:200; stroke-dashoffset:200; animation:draw .6s ease-out forwards}
@@ -155,6 +178,7 @@ footer{padding:2.5rem 0 3rem; font-family:var(--sans); font-size:.9rem; color:va
       <a class="l-cv" href="../cv.pdf"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>简历（PDF）</span></a>
     </div>
   </div>
+  <figure class="hero-fig">
   <svg class="diagram" viewBox="0 0 420 300" role="img" aria-label="Sequence chart: a sender stores message 41 on a storage node, the receiver gets it, then a malicious node delivers message 41 again, bypassing the intended duplicate check.">
     <defs>
       <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--ink)"/></marker>
@@ -183,6 +207,8 @@ footer{padding:2.5rem 0 3rem; font-family:var(--sans); font-size:.9rem; color:va
       </g>
     </g>
   </svg>
+    <figcaption>摘自我的 WOOT ’26 论文：恶意存储节点绕过 Session 的重复检测，重放消息</figcaption>
+  </figure>
 </header>
 
 <main>
