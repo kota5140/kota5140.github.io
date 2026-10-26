@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kota5140.github.io/sitemap.xml
+Sitemap: https://kotaurushigaki.com/sitemap.xml
