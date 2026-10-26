@@ -10,7 +10,7 @@
 <meta property="og:description" content="Kota Urushigaki, security researcher at the University of Osaka. First author of a USENIX WOOT ’26 paper on practical attacks against the Session messenger.">
 <meta property="og:url" content="https://kota5140.github.io/">
 <meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -90,9 +90,9 @@ html:not([lang="en"]) .hero p.lede{line-height:1.75}
 .links .ic{color:var(--c,var(--accent)); margin:0}
 .brand{width:1.15em; height:1.15em; flex:none; display:block; object-fit:contain}
 .brand + .ic{display:none}
-.l-mail{--c:#D9480F} .l-gh{--c:#24292F} .l-li{--c:#0A66C2} .l-orcid{--c:#6E9A1F} .l-paper{--c:#C0392B} .l-slides{--c:#8E44AD} .l-cv{--c:#1B4A7A}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .l-gh{--c:#E6EDF3} :root:not([data-theme="light"]) .l-li{--c:#4DA3FF} :root:not([data-theme="light"]) .l-orcid{--c:#A6CE39} :root:not([data-theme="light"]) .l-paper{--c:#FF8A7A} :root:not([data-theme="light"]) .l-slides{--c:#C79BEA} :root:not([data-theme="light"]) .l-cv{--c:#7EA9D8} :root:not([data-theme="light"]) .l-mail{--c:#FF9F5A}}
-:root[data-theme="dark"] .l-gh{--c:#E6EDF3} :root[data-theme="dark"] .l-li{--c:#4DA3FF} :root[data-theme="dark"] .l-orcid{--c:#A6CE39} :root[data-theme="dark"] .l-paper{--c:#FF8A7A} :root[data-theme="dark"] .l-slides{--c:#C79BEA} :root[data-theme="dark"] .l-cv{--c:#7EA9D8} :root[data-theme="dark"] .l-mail{--c:#FF9F5A}
+.l-mail{--c:#D9480F} .l-gh{--c:#24292F} .l-li{--c:#0A66C2} .l-orcid{--c:#6E9A1F} .l-paper{--c:#C0392B} .l-eprint{--c:#0F766E} .l-slides{--c:#8E44AD} .l-cv{--c:#1B4A7A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .l-gh{--c:#E6EDF3} :root:not([data-theme="light"]) .l-li{--c:#4DA3FF} :root:not([data-theme="light"]) .l-orcid{--c:#A6CE39} :root:not([data-theme="light"]) .l-paper{--c:#FF8A7A} :root:not([data-theme="light"]) .l-eprint{--c:#5EC4B6} :root:not([data-theme="light"]) .l-slides{--c:#C79BEA} :root:not([data-theme="light"]) .l-cv{--c:#7EA9D8} :root:not([data-theme="light"]) .l-mail{--c:#FF9F5A}}
+:root[data-theme="dark"] .l-gh{--c:#E6EDF3} :root[data-theme="dark"] .l-li{--c:#4DA3FF} :root[data-theme="dark"] .l-orcid{--c:#A6CE39} :root[data-theme="dark"] .l-paper{--c:#FF8A7A} :root[data-theme="dark"] .l-eprint{--c:#5EC4B6} :root[data-theme="dark"] .l-slides{--c:#C79BEA} :root[data-theme="dark"] .l-cv{--c:#7EA9D8} :root[data-theme="dark"] .l-mail{--c:#FF9F5A}
 .ic{width:1.15em; height:1.15em; flex:none; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; margin-right:.4em}
 .photo{width:6.5rem; height:6.5rem; border-radius:50%; overflow:hidden; background:var(--accent-soft); color:var(--accent); display:grid; place-items:center; font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Microsoft YaHei UI","Microsoft JhengHei UI",sans-serif; font-weight:600; font-size:1.6rem; line-height:1; margin:0 0 1.25rem; flex:none}
 .photo img{width:100%; height:100%; object-fit:cover; display:block}
@@ -113,6 +113,16 @@ section h2::before{content:""; display:block; width:1.5rem; height:3px; border-r
 .wrap{position:relative; z-index:1}
 
 /* Featured paper */
+.pubs{margin:0; padding-left:1.4rem}
+.pubs li{margin:0 0 1.6rem; padding-left:.3rem}
+.pubs li:last-child{margin-bottom:0}
+.pubs li::marker{color:var(--accent); font-family:var(--sans); font-weight:600}
+.pubs p{margin:0 0 .2rem}
+.pub-title{color:var(--ink); font-weight:600}
+.pub-trans{color:var(--muted); font-size:.95rem}
+.pub-trans:empty{display:none}
+.pub-authors,.pub-venue{font-size:.95rem}
+.pub-links{font-family:var(--sans); font-size:.9rem; margin-top:.35rem !important}
 #research .item:first-child{background:var(--panel); border-radius:14px; padding:1.5rem 1.6rem; margin-left:-1.6rem; margin-right:-1.6rem}
 
 /* Timelines for dated entries */
@@ -151,6 +161,11 @@ footer{padding:2.5rem 0 3rem; font-family:var(--sans); font-size:.9rem; color:va
   @keyframes show{to{opacity:1}}
 }
 </style>
+<meta property="og:image" content="https://kota5140.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kota Urushigaki（漆垣 皓大）, security researcher, The University of Osaka">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Kota Urushigaki", "alternateName": ["漆垣 皓大", "漆垣皓大"], "url": "https://kota5140.github.io/", "email": "mailto:k.urushigaki@ist.osaka-u.ac.jp", "jobTitle": "Specially Appointed Researcher", "affiliation": {"@type": "CollegeOrUniversity", "name": "The University of Osaka", "url": "https://www.osaka-u.ac.jp/en"}, "alumniOf": [{"@type": "CollegeOrUniversity", "name": "The University of Osaka"}, {"@type": "CollegeOrUniversity", "name": "Technical University of Munich"}], "knowsAbout": ["Applied cryptography", "Secure messaging", "Cryptographic protocol analysis", "Formal verification", "Zero-knowledge proofs"], "sameAs": ["https://github.com/kota5140", "https://www.linkedin.com/in/kotaursgk/", "https://orcid.org/0009-0002-5184-3131"]}</script>
 </head>
 <body>
 <div class="grid-bg" aria-hidden="true"></div>
@@ -231,17 +246,37 @@ footer{padding:2.5rem 0 3rem; font-family:var(--sans); font-size:.9rem; color:va
       <p>I disclosed all three attacks to the Session team. In late April 2026 they accepted most of our findings, and classified the replay attack as unexploitable because an incidental database configuration currently blocks it, rather than a designed security boundary. As of July 2026, fixes were in progress.</p>
       <p class="links">
         <a class="l-paper" href="https://www.usenix.org/system/files/woot26-urushigaki.pdf"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg><span>Paper (PDF)</span></a>
+        <a class="l-eprint" href="https://eprint.iacr.org/2026/1247"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg>ePrint</a>
         <a class="l-slides" href="https://www.usenix.org/system/files/woot26-slides-urushigaki.pdf"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8 20h8"/></svg><span>Slides</span></a>
         <a class="l-gh" href="https://github.com/kota5140/session-woot"><img class="brand" src="assets/icons/github.svg" alt="" width="18" height="18" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace(/\.svg$/,'.png')}else{this.remove()}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg><span>Artifact</span></a>
       </p>
       <p class="meta">Presented at USENIX WOOT ’26, Baltimore, August 2026</p>
-      <p class="meta">The impersonation attack was first presented in Japanese at SCIS 2026, the Symposium on Cryptography and Information Security, in January 2026.</p>
     </div>
     <div class="item">
       <h3>Next: reverse engineering proprietary protocols</h3>
       <p class="meta">Master’s research, from April 2027</p>
       <p>Many deployed systems run cryptographic protocols that were never published. In my master’s research I plan to recover their design from the implementation, model it formally in Tamarin, and look for attacks the vendors’ own analysis missed.</p>
     </div>
+  </div>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+  <div class="body">
+    <ol class="pubs">
+      <li>
+        <p class="pub-title">Practical Attacks on a Decentralized Secure Messenger Session</p>
+        <p class="pub-authors"><strong>Kota Urushigaki</strong>, Hayato Kimura, Atsushi Tanaka, Takanori Isobe</p>
+        <p class="pub-venue"><em>20th USENIX WOOT Conference on Offensive Technologies (WOOT ’26)</em><span>, Baltimore, USA, August 2026 · Artifact Available badge</span></p>
+        <p class="pub-links"><a href="https://www.usenix.org/system/files/woot26-urushigaki.pdf">Paper (PDF)</a> · <a href="https://eprint.iacr.org/2026/1247">ePrint</a> · <a href="https://www.usenix.org/system/files/woot26-slides-urushigaki.pdf">Slides</a> · <a href="https://github.com/kota5140/session-woot">Artifact</a></p>
+      </li>
+      <li>
+        <p class="pub-title" lang="ja">匿名メッセンジャーアプリSessionに対するなりすまし攻撃</p>
+        <p class="pub-trans">“Impersonation Attack on the Anonymous Messenger App Session” (in Japanese)</p>
+        <p class="pub-authors"><strong>Kota Urushigaki</strong>, Hayato Kimura, Atsushi Tanaka, Takanori Isobe</p>
+        <p class="pub-venue"><em>Symposium on Cryptography and Information Security (SCIS 2026)</em><span>, January 2026</span></p>
+      </li>
+    </ol>
   </div>
 </section>
 
@@ -330,7 +365,7 @@ footer{padding:2.5rem 0 3rem; font-family:var(--sans); font-size:.9rem; color:va
   <div class="body skills">
     <div><h3>Protocol analysis</h3><p>End-to-end encrypted messaging, key authentication, replay protection</p></div>
     <div><h3>Tools</h3><p>Tamarin prover, Frida, Wireshark, patching mobile clients</p></div>
-    <div><h3>Programming</h3><p>Python, C, Rust, JavaScript</p></div>
+    <div><h3>Programming</h3><p>Python, C, Swift, JavaScript / TypeScript</p></div>
     <div><h3>Zero knowledge</h3><p>ZK proof systems and circuit development</p></div>
     <div><h3>Infrastructure</h3><p>Google Cloud, Microsoft Azure, Docker</p></div>
     <div><h3>Languages</h3><p>Japanese (native), English (professional, EF SET C1), German (elementary)</p></div>
